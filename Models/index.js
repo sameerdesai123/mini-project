@@ -40,8 +40,8 @@ function stop(e) {
 
 function captureImage(){
   var canvas = document.getElementById('Mycanvas');
-  canvas.width = 640;
-  canvas.height = 480;
+  canvas.width = 28;
+  canvas.height = 28;
   var ctx = canvas.getContext('2d');
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   //convert to desired file format
@@ -52,9 +52,20 @@ function captureImage(){
 function preprocess(img){
   let tensor = tf.browser.fromPixels(img).resizeNearestNeighbor([28,28]).toFloat(); // .expandDims();
   const rgb = tf.tensor1d([0.2989, 0.587, 0.114])
-  tensor = tf.sum(tensor.mul(rgb), 2).expandDims(2)
+  tensor = tf.sum(tensor.mul(rgb), 2).expandDims()
   tensor = tensor.reshape([1,28,28,1])
   return tensor
+}
+
+function max(arr) {
+  let max = arr[0]
+  for(let i = 1;i<arr.length;i++)
+  {
+    if(arr[i] > max){
+      max = arr[i]
+    }
+  }
+  return max;
 }
 
 function predict(){
@@ -69,7 +80,8 @@ function predict(){
   // Predict
   model.predict(processedImg).data()
   .then(data => {
-    console.log("Prediction : ", Math.round(data[0]/256.0));
+    console.log("Prediction : ", data, data.indexOf(1));
+    document.getElementById('prediction').innerHTML = data.indexOf(max(data))
   })
   .catch(err => {
     console.log(err);
