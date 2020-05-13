@@ -3,7 +3,6 @@ var video = document.querySelector("#videoElement");
 var model = null;
 async function preload() {
   model = await tf.loadLayersModel('/model.json');
-  document.querySelector('#status').innerHTML = "Model Ready";
 }
 
 if (navigator.mediaDevices.getUserMedia) {
@@ -40,8 +39,8 @@ function stop(e) {
 
 function captureImage(){
   var canvas = document.getElementById('Mycanvas');
-  canvas.width = 28;
-  canvas.height = 28;
+  canvas.width = 100;
+  canvas.height = 80;
   var ctx = canvas.getContext('2d');
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   //convert to desired file format

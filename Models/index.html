@@ -5,35 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MNIST Test</title>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
-  <style>
-    #container {
-      margin: 0px auto;
-      width: 500px;
-      height: 375px;
-      border: 10px #333 solid;
-    }
-    #videoElement {
-      width: 500px;
-      height: 375px;
-      background-color: #666;
-    }
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  
+<style>
+  .jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 0;
+  }
+  .not-bottom {
+    margin-top: 1rem;
+    margin-right: 6rem;
+    margin-bottom: 2rem;
+  }
   </style>
 </head>
+
 <body onload="preload()">
-  <div class="container">
-    <div class="video-view">
-      <h1 id="status">Loading Model..</h1> <br>
-      <video autoplay="true" id="videoElement"></video>
-      &nbsp;
-      <canvas id="Mycanvas"></canvas>
+  <section class="top">
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <a href="../" class="navbar-brand">Guess Number</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </div>
-    <div class="prediction-view">
-      <h1>Prediction : </h1> &nbsp; <h2 id="prediction"></h2>
+  </section>
+  <br><br><br><br>
+  <section class="main">
+    <div class="container">
+      <div class="jumbotron bg-black not-bottom sm-cols-6 float-left">
+        <div class="display-4">Live WebCam <div class="float-right"><button onclick="stop()" type="button" class="btn btn-outline-danger">Stop</button></div></div>
+        <div class="content-center sm-cols-3"><video id="videoElement" width="480" height="150" autoplay></video></div>
+      </div>
+      <div class="jumbotron bg-black not-bottom sm-cols-6 float-left">
+        <div class="display-4">Prediction &nbsp;&nbsp;<div class="float-right"><button onclick="predict()" type="button" class="btn btn-outline-primary">Predict</button></div></div>
+        <p>Captured Image :<br><canvas id="Mycanvas" class="sm-cols-3 align-center" width="100" height="80"></canvas></p>
+        <p><font>Prediction Value: </font> <font class="text-danger" id="prediction"></font></p>
+      </div>
     </div>
-    <div class="control-panel"> 
-      <button onclick="stop()">Stop</button> &nbsp;<button onclick="start()">Start</button> &nbsp; <button onclick="predict()">Predict</button>
+    <div class="container">
+      <div class="jumbotron bg-black not-bottom sm-cols-6 float-left">
+        <div class="display-3">Model (MNIST)<div class="float-right"><button onclick="stop()" type="button" class="btn btn-success">👇 Download</button></div></div>
+        <p>
+          about the model... 
+          graphs...
+          code...
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
   <script src="/index.js"></script>
 </body>
 </html>
