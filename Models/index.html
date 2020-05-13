@@ -22,14 +22,16 @@
 <body onload="preload()">
   <div class="container">
     <div class="video-view">
-      Video <br>
+      <h1 id="status">Loading Model..</h1> <br>
       <video autoplay="true" id="videoElement"></video>
+      &nbsp;
+      <canvas id="Mycanvas"></canvas>
     </div>
     <div class="prediction-view">
-      <h1>Prediction</h1>
+      <h1>Prediction : </h1> &nbsp; <h2 id="prediction"></h2>
     </div>
-    <div class="control-panel">
-      <button onclick="stop()">Stop</button> &nbsp;<button onclick="start()">Start</button>
+    <div class="control-panel"> 
+      <button onclick="stop()">Stop</button> &nbsp;<button onclick="start()">Start</button> &nbsp; <button onclick="predict()">Predict</button>
     </div>
   </div>
   <script src="/index.js"></script>
