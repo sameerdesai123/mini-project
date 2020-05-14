@@ -2,7 +2,7 @@
 var video = document.querySelector("#videoElement");
 var model = null;
 async function preload() {
-  model = await tf.loadLayersModel('/model.json');
+  model = await tf.loadLayersModel('/Model/model.json');
 }
 
 if (navigator.mediaDevices.getUserMedia) {

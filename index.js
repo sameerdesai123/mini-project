@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const mustacheExpress = require('mustache-express');
 
 port = process.env.PORT || 5000;
-app.use(express.static('Models'))
+app.use(express.static('Static'))
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
@@ -20,7 +20,7 @@ app.get('/', (req, res, next) => {
 })
 
 app.get('/download', function(req, res){
-  const file = `${__dirname}/Models/model.json`;
+  const file = `${__dirname}/Static/Model/model.json`;
   res.download(file); // Set disposition and send it.
 });
 
