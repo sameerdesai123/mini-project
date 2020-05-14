@@ -24,6 +24,6 @@ app.get('/download', function(req, res){
   res.download(file); // Set disposition and send it.
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log(`listening at port : ${port}`);
 })

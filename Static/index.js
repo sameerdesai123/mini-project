@@ -1,6 +1,7 @@
 
 var video = document.querySelector("#videoElement");
 var model = null;
+
 async function preload() {
   var acc = document.getElementById('acc-canvas');
   var ctx_1 = acc.getContext('2d');

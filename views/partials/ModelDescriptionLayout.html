@@ -4,10 +4,10 @@
       <form method="GET" action="/download"><button type="submit" class="btn btn-success">👇 Download</button></form>
     </div>
   </div>
-    
-  <div onmouseover="increaseChartSize()" onmouseout="decreaseChartSize()" class="row image-container bg-black" style="margin-top: 2rem;">
-    <canvas id="acc-canvas" class="w-50 p-3" ></canvas>
-    <canvas id="loss-canvas" class="w-50 p-3"></canvas>
+  <!-- onmouseover="increaseChartSize()" onmouseout="decreaseChartSize()"  -->
+  <div class="row image-container bg-black" style="margin-top: 2rem;" style="max-height: 350;"">
+    <canvas id="acc-canvas" class="w-50 p-3 h-100"></canvas>
+    <canvas id="loss-canvas" class="w-50 p-3 h-100" ></canvas>
     <!-- <img src="/Model/images/accuracy.png" alt="accuracy Graph" />
     <div class="float-right"><img src="/Model/images/loss.png" alt="loss graph" /></div> -->
   </div>
