@@ -1,0 +1,22 @@
+{{> Head }}
+<body onload="preload()">
+  <section class="nav">
+    {{> NavBar}}
+  </section>
+  <section class="main">
+    <div class="container">
+      <div class="sm-cols-6">
+        {{> VideoPanel }}
+      </div>
+      <div class="sm-cols-6">
+        {{> PredictionPanel }}
+      </div>
+    </div>
+  </section>
+  <section class="description">
+    <div class="container">
+      {{> ModelDescriptionLayout }}
+    </div>
+  </section>
+  {{> JsImports }}
+</body>

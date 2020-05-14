@@ -93,7 +93,7 @@ for fn in uploaded.keys():
   res = list(classes[0])
   print(res.index(max(res)))
 
-!pip install tensorflowjs
+
 import tensorflowjs as tfjs
 
 import matplotlib.pyplot as plt
