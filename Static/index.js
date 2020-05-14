@@ -2,6 +2,12 @@
 var video = document.querySelector("#videoElement");
 var model = null;
 async function preload() {
+  var acc = document.getElementById('acc-canvas');
+  var ctx_1 = acc.getContext('2d');
+  new Chart(ctx_1, config_1);
+  var loss = document.getElementById('loss-canvas');
+  var ctx_2 = loss.getContext('2d');
+  new Chart(ctx_2, config_2);
   model = await tf.loadLayersModel('/Model/model.json');
 }
 

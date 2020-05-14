@@ -1,12 +1,15 @@
 <div class="jumbotron bg-black m-cols-6">
-  <div class="display-4">Model (MNIST)
+  <div class="display-4" id="description-header" onmouseover="showChart()">MNIST
     <div class="float-right">
       <form method="GET" action="/download"><button type="submit" class="btn btn-success">👇 Download</button></form>
     </div>
   </div>
-  <div class="images container bg-dark" style="margin-top: 2rem;">
-    <img src="/Model/images/accuracy.png" alt="accuracy Graph" />
-    <div class="float-right"><img src="/Model/images/loss.png" alt="loss graph" /></div>
+    
+  <div onmouseover="increaseChartSize()" onmouseout="decreaseChartSize()" class="row image-container bg-black" style="margin-top: 2rem;">
+    <canvas id="acc-canvas" class="w-50 p-3" ></canvas>
+    <canvas id="loss-canvas" class="w-50 p-3"></canvas>
+    <!-- <img src="/Model/images/accuracy.png" alt="accuracy Graph" />
+    <div class="float-right"><img src="/Model/images/loss.png" alt="loss graph" /></div> -->
   </div>
   <p>
     about the model... 
